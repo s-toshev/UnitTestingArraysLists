@@ -13,10 +13,10 @@ public class ReverseTests
         int[] emptyArray = Array.Empty<int>();
 
         // Act
-        string result = Reverse.ReverseArray(emptyArray);
+        string actual = Reverse.ReverseArray(emptyArray);
 
         // Assert
-        Assert.That(result, Is.EqualTo(string.Empty));
+        Assert.That(actual, Is.EqualTo(string.Empty));
     }
 
     // TODO: finish the test
@@ -24,17 +24,26 @@ public class ReverseTests
     public void Test_ReverseArray_InputHasOneElement_ShouldReturnTheSameElement()
     {
         // Arrange
+        int[] newArr = new int[] { 3 };
 
         // Act
-        string result;
+        string actual = Reverse.ReverseArray(newArr);
 
         // Assert
-        //Assert.That(result, Is.EqualTo("42"));
+        Assert.That(actual, Is.EqualTo("3"));
     }
 
     [Test]
     public void Test_ReverseArray_InputHasMultipleElements_ShouldReturnReversedString()
     {
-        // TODO: finish the test
+
+        // Arrange
+        int[] newArr = new int[] { 3, 7, 9, 12, 17 };
+
+        // Act
+        string actual = Reverse.ReverseArray(newArr);
+        string expected = "17 12 9 7 3";
+        // Assert
+        Assert.That(actual, Is.EqualTo(expected));
     }
 }
