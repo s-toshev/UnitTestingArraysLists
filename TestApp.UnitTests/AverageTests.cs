@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using Newtonsoft.Json.Linq;
+using NUnit.Framework;
 
 using System;
 
@@ -14,27 +15,49 @@ public class AverageTests
         int[] array = { 42 };
 
         // Act
-        double result;
-
+        double result = Average.CalculateAverage(array);
+        double expected = 42.0;
         // Assert
-        //Assert.That(result, Is.EqualTo(42));
+        Assert.That(result, Is.EqualTo(expected));
     }
 
+    
     [Test]
     public void Test_CalculateAverage_InputHasPositiveIntegers_ShouldReturnCorrectAverage()
     {
-        // TODO: finish the test
+        // Arrange
+        int[] array = { 40, 20, 60};
+
+        // Act
+        double result = Average.CalculateAverage(array);
+        double expected = 40.0;
+        // Assert
+        Assert.That(result, Is.EqualTo(expected));
     }
 
     [Test]
     public void Test_CalculateAverage_InputHasNegativeIntegers_ShouldReturnCorrectAverage()
     {
-        // TODO: finish the test
+        // Arrange
+        int[] array = { -30, -20, -10 };
+
+        // Act
+        double result = Average.CalculateAverage(array);
+        double expected = -20;
+        // Assert
+        Assert.That(result, Is.EqualTo(expected));
     }
 
     [Test]
     public void Test_CalculateAverage_InputHasMixedIntegers_ShouldReturnCorrectAverage()
     {
-        // TODO: finish the test
+        // Arrange
+        int[] array = { -30, -20, 20 };
+
+        // Act
+        double result = Average.CalculateAverage(array);
+        double expected = -10;
+        // Assert
+        Assert.That(result, Is.EqualTo(expected));
     }
 }
