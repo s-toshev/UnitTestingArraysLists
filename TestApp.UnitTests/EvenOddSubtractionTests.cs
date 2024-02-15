@@ -16,7 +16,7 @@ public class EvenOddSubtractionTests
         int result = EvenOddSubtraction.FindDifference(emptyArray);
 
         // Assert
-        Assert.That(result, Is.EqualTo(0));
+        Assert.That(result, Is.Zero);
     }
 
     // TODO: finish the test
@@ -24,23 +24,44 @@ public class EvenOddSubtractionTests
     public void Test_FindDifference_InputHasOnlyEvenNumbers_ShouldReturnEvenSum()
     {
         // Arrange
-
+        int[] ints =
+            {
+            4,4,4,4,4,4
+        };
         // Act
-        int result;
-
+        int result=EvenOddSubtraction.FindDifference(ints);
+        int expected = 24;
         // Assert
-        //Assert.That(result, Is.EqualTo(20));
+        Assert.That(result, Is.EqualTo(expected));
     }
 
     [Test]
     public void Test_FindDifference_InputHasOnlyOddNumbers_ShouldReturnNegativeOddSum()
     {
-        // TODO: finish the test
+        // Arrange
+        int[] ints =
+            {
+           7,7,7,7,7,7,7
+        };
+        // Act
+        int result = EvenOddSubtraction.FindDifference(ints);
+        int expected = 49;
+        // Assert
+        Assert.That(result, Is.EqualTo(expected));
     }
 
     [Test]
     public void Test_FindDifference_InputHasMixedNumbers_ShouldReturnDifference()
     {
-        // TODO: finish the test
+        // Arrange
+        int[] ints =
+            {
+           7,7,7,2,7,2,7,7,2,7
+        };
+        // Act
+        int result = EvenOddSubtraction.FindDifference(ints);
+        int expected = 43;
+        // Assert
+        Assert.That(result, Is.EqualTo(expected));
     }
 }
